@@ -1,0 +1,261 @@
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>stype</title>
+        <style>
+          /* Your CSS styles here */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+        </style>
+      </head>
+      <body>
+        <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>СТАЙП — Вестник для Образовательных Учреждений</title>
+    <style>
+        body {
+            background: #e0e0e0 url('https://www.transparenttextures.com/patterns/cubes.png');
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(to bottom, #4facfe 0%, #00f2fe 100%);
+            padding: 15px;
+            text-align: center;
+            border-bottom: 5px solid #0056b3;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        h1 { color: white; text-shadow: 2px 2px 4px #000; font-size: 2.5em; margin: 0; }
+
+        nav {
+            background: #333;
+            padding: 8px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        nav a {
+            color: yellow;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 15px;
+            border: 2px outset #666;
+            background: #444;
+            margin: 0 5px;
+            display: inline-block;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .announcement-board {
+            background: #000;
+            color: #0f0;
+            padding: 10px;
+            font-weight: bold;
+            border-bottom: 2px solid #0056b3;
+            box-shadow: inset 0 0 10px #0f0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto 40px auto;
+            background: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .main-border { border: 10px double #0056b3; border-radius: 50px 0 50px 0; }
+        .animal-border { border: 10px double #228B22; border-radius: 0 50px 0 50px; }
+        .teacher-border { border: 10px double #4facfe; border-radius: 25px; }
+
+        .hero-box { background: #ffffcc; border: 3px dashed red; padding: 20px; margin-bottom: 20px; }
+
+        .login-btn {
+            background: linear-gradient(to bottom, #ff3300 0%, #990000 100%);
+            color: white; padding: 20px 40px; font-size: 24px; border-radius: 50px;
+            border: 4px solid #fff; box-shadow: 4px 4px 10px #000; text-decoration: none; 
+            display: inline-block; font-weight: bold;
+        }
+
+        .event-section {
+            background: #f0fff0;
+            border: 2px solid #228B22;
+            padding: 15px;
+            border-radius: 20px;
+            margin-top: 20px;
+        }
+
+        .event-link {
+            background: linear-gradient(to bottom, #32cd32, #006400);
+            color: white; padding: 12px 20px; border-radius: 10px; border: 2px solid gold;
+            text-decoration: none; font-weight: bold; display: inline-block;
+            cursor: pointer;
+        }
+
+        .schedule { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        .schedule th, .schedule td { border: 2px solid #228B22; padding: 8px; text-align: center; }
+        .schedule th { background: #32cd32; color: white; }
+
+        .instruction-box {
+            text-align: left;
+            background: #f0f8ff;
+            padding: 20px;
+            border: 2px solid #4facfe;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center; font-size: 12px; padding: 20px;
+            background: #222; color: #aaa; border-top: 3px solid #4facfe;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>СТАЙП (stype)</h1>
+    <p style="color: white; font-style: italic; margin: 5px 0 0 0;">Система Товарищеского Информационного Переговорщика</p>
+</header>
+
+<nav>
+    <a onclick="showMain()">ГЛАВНАЯ</a>
+    <a onclick="showTeachers()">ДЛЯ УЧИТЕЛЕЙ</a>
+    <a onclick="showPage2()">МИР ЖИВОТНЫХ</a>
+</nav>
+
+<div class="announcement-board">
+    <marquee scrollamount="6">ДОСКА ОБЪЯВЛЕНИЙ: С 4-ГО МАЯ БУДЕТ НАЧАТА ПЯТИДНЕВКА "МИР ЖИВОТНЫХ"!</marquee>
+</div>
+
+<div id="content-area"></div>
+
+<script>
+    const mainPageHTML = `
+        <div class="container main-border">
+            <div class="hero-box">
+                <h2 style="color: #0000ff; text-decoration: underline;">ОТЕЧЕСТВЕННЫЙ ВЕСТНИК</h2>
+                <p>Безопасное пространство для учебы и дружбы.</p>
+                <a href="https://school-connect--386sers.replit.app/" class="login-btn">ЗАЙТИ В СТАЙП</a>
+            </div>
+
+            <div class="event-section">
+                <h3 style="margin: 0 0 10px 0; color: #006400;">АКТУАЛЬНОЕ СОБЫТИЕ:</h3>
+                <a onclick="showPage2()" class="event-link">🐾 ПЯТИДНЕВКА: МИР ЖИВОТНЫХ 🐾</a>
+            </div>
+
+            <footer>
+                &copy; 2024-2026 «Сергиндус». Все права защищены согласно уложению о труде.
+            </footer>
+        </div>
+    `;
+
+    const page2HTML = `
+        <div class="container animal-border">
+            <div style="background: #ccffcc; border: 3px dashed #006400; padding: 20px;">
+                <h2 style="color: #006400;">ПЯТИДНЕВКА: МИР ЖИВОТНЫХ</h2>
+                <p>Узнавай новое в нашем Переговорщике!</p>
+            </div>
+
+            <table class="schedule">
+                <thead>
+                    <tr><th>День</th><th>Тема</th><th>Место</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>ПН</td><td>Лесные Обитатели</td><td>Кружок «Лес»</td></tr>
+                    <tr><td>ВТ</td><td>Морские Глубины</td><td>Кружок «Океан»</td></tr>
+                    <tr><td>СР</td><td>Домашние Питомцы</td><td>Общая комната</td></tr>
+                    <tr><td>ЧТ</td><td>Птицы края</td><td>Кружок «Пернатые»</td></tr>
+                    <tr><td>ПТ</td><td>Охрана видов</td><td>Общая комната</td></tr>
+                </tbody>
+            </table>
+            <br>
+            <a onclick="showMain()" style="color: #006400; font-weight: bold; cursor: pointer; text-decoration: underline;">[ ← НАЗАД НА ГЛАВНУЮ ]</a>
+            
+            <footer style="margin-top: 30px;">
+                &copy; 2024-2026 «Сергиндус».
+            </footer>
+        </div>
+    `;
+
+    const teachersPageHTML = `
+        <div class="container teacher-border">
+            <h2 style="color: #0056b3;">ИНСТРУКЦИИ ДЛЯ НАСТАВНИКОВ</h2>
+            
+            <div class="instruction-box">
+                <h3 style="margin-top: 0; color: #0056b3;">1. ПОРЯДОК РЕГИСТРАЦИИ</h3>
+                <p>Для создания новой учетной записи:</p>
+                <ul>
+                    <li>Нажмите кнопку <b>"ЗАЙТИ В СТАЙП"</b> на главной странице.</li>
+                    <li>Выберите опцию <b>"Регистрация"</b>.</li>
+                    <li>Придумайте свой <b>Логин</b> и впишите его в соответствующее поле.</li>
+                    <li>Введите <b>Отображаемое имя</b> (оно будет видно всем в приложении).</li>
+                    <li>Придумайте надежный <b>Пароль</b>.</li>
+                    <li>Нажмите зеленую кнопку <b>"Создать аккаунт"</b>.</li>
+                </ul>
+            </div>
+
+            <div class="instruction-box">
+                <h3 style="margin-top: 0; color: #0056b3;">2. ВХОД В СИСТЕМУ</h3>
+                <p>Если аккаунт уже создан:</p>
+                <ol>
+                    <li>Нажмите <b>"ЗАЙТИ В СТАЙП"</b>.</li>
+                    <li>Напишите свой <b>Логин</b>.</li>
+                    <li>Напишите свой <b>Пароль</b>, который Вы придумывали.</li>
+                    <li>Нажмите на синюю кнопку <b>"Войти"</b>.</li>
+                </ol>
+            </div>
+            
+            <br>
+            <a onclick="showMain()" style="color: #0056b3; font-weight: bold; cursor: pointer; text-decoration: underline;">[ ← НАЗАД НА ГЛАВНУЮ ]</a>
+            
+            <footer style="margin-top: 30px;">
+                &copy; 2024-2026 «Сергиндус».
+            </footer>
+        </div>
+    `;
+
+    function showMain() {
+        document.getElementById('content-area').innerHTML = mainPageHTML;
+        window.scrollTo(0, 0);
+    }
+
+    function showPage2() {
+        document.getElementById('content-area').innerHTML = page2HTML;
+        window.scrollTo(0, 0);
+    }
+
+    function showTeachers() {
+        document.getElementById('content-area').innerHTML = teachersPageHTML;
+        window.scrollTo(0, 0);
+    }
+
+    showMain();
+</script>
+
+</body>
+</html>
+        <script>
+          // Your JavaScript code here
+console.log('stype - Project loaded!');
+        </script>
+      </body>
+      </html>
+    
